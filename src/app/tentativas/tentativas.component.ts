@@ -1,4 +1,4 @@
-import { Component, Input,OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Coracao } from '../shared/coracao.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Coracao } from '../shared/coracao.model';
 })
 export class TentativasComponent implements OnInit, OnChanges {
 
- @Input() public tentativas !: number
+  @Input() public tentativas !: number
 
   public coracoes: Coracao[] = [
     new Coracao(true), new Coracao(true), new Coracao(true)
@@ -16,20 +16,20 @@ export class TentativasComponent implements OnInit, OnChanges {
 
 
   constructor() {
-   
+
   }
 
   ngOnInit(): void {
     //sconsole.log(this.tentativas)
   }
-  ngOnChanges(){
+  ngOnChanges() {
 
-    if(this.tentativas !== this.coracoes.length){
+    if (this.tentativas !== this.coracoes.length) {
       let indice = this.coracoes.length - this.tentativas
-      this.coracoes[indice-1].cheio=false,
-    
-    console.log(this.tentativas)
+      this.coracoes[indice - 1].cheio = false,
+
+        console.log(this.tentativas)
+    }
   }
-}
 
 }
